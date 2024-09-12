@@ -1,0 +1,385 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Bricolage Grotesque", Arial, Helvetica, sans-serif, sans-serif;
+}
+
+html {
+  background-color: #bc6c25;
+}
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url(BricolageGrotesque-VariableFont_opszwdthwght.ttf) format("ttf");
+}
+
+.container {
+  display: grid;
+  gap: 0.2rem;
+  grid-template-columns: 0.4fr repeat(3, 1fr);
+  grid-template-rows: 0.3fr repeat(3, 1fr) 0.2fr;
+  grid-template-areas:
+    "header header header header"
+    "aside article article article"
+    "aside article article article"
+    "aside article article article"
+    "footer footer footer footer";
+  min-height: 100vh;
+}
+
+header {
+  background-color: #ecdfcc;
+  grid-area: header;
+  text-align: left;
+}
+
+#headerTitle {
+  font-size: 3.5rem;
+  font-style: italic;
+  padding-left: 2rem;
+  color: #343a40;
+}
+
+article {
+  background-color: #ecdfcc;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  grid-area: article;
+  display: grid;
+  gap: 0.2rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "album1 album2 album3 album4"
+    "album5 album6 album7 album8";
+}
+
+.albumcoverImg {
+  box-shadow: 10px 10px 43px 18px rgba(0, 0, 0, 0.5);
+}
+
+.imgWrapper {
+  position: relative;
+  height: 80%;
+  width: 80%;
+}
+
+.imgWrapper img {
+  height: 100%;
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.imgWrapper img:hover {
+  transform: scale(1.1);
+  filter: blur(2px);
+}
+
+.albumInfo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  width: 70%;
+  height: auto;
+}
+
+.imgWrapper:hover .albumInfo {
+  opacity: 1;
+}
+
+#album1 {
+  grid-area: album1;
+  /* height: 90%;
+  width: 90%; */
+  height: 20rem;
+  width: 20rem;
+  margin: auto;
+  border-radius: 10px;
+  background-image: url(media/albumcoverBlurred.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#album2 {
+  grid-area: album2;
+  /* height: 90%;
+  width: 90%; */
+  height: 20rem;
+  width: 20rem;
+  margin: auto;
+  border-radius: 10px;
+  background-image: url(media/albumcover2Blurred.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#album3 {
+  grid-area: album3;
+  /* height: 90%;
+  width: 90%; */
+  height: 20rem;
+  width: 20rem;
+  margin: auto;
+  border-radius: 10px;
+  background-image: url(media/albumcover3Blurred.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#album4 {
+  grid-area: album4;
+  /* height: 90%;
+  width: 90%; */
+  height: 20rem;
+  width: 20rem;
+  margin: auto;
+  border-radius: 10px;
+  background-image: url(media/albumcover4Blurred.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#album5 {
+  grid-area: album5;
+  /* height: 90%;
+  width: 90%; */
+  height: 20rem;
+  width: 20rem;
+  margin: auto;
+  border-radius: 10px;
+  background-image: url(media/albumcover5Blurred.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#album6 {
+  grid-area: album6;
+  /* height: 90%;
+  width: 90%; */
+  height: 20rem;
+  width: 20rem;
+  margin: auto;
+  border-radius: 10px;
+  background-image: url(media/albumcover6Blurred.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#album7 {
+  grid-area: album7;
+  /* height: 90%;
+  width: 90%; */
+  height: 20rem;
+  width: 20rem;
+  margin: auto;
+  border-radius: 10px;
+  background-image: url(media/albumcover7Blurred.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#album8 {
+  grid-area: album8;
+  /* height: 90%;
+  width: 90%; */
+  height: 20rem;
+  width: 20rem;
+  margin: auto;
+  border-radius: 10px;
+  background-image: url(media/albumcover8Blurred.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+aside {
+  background-color: #ecdfcc;
+  grid-area: aside;
+  border-radius: 10px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-top: 2rem;
+}
+
+#leaningMan {
+  margin: 0;
+  padding: 0;
+  padding-left: 0;
+  display: flex;
+  align-items: left;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  width: auto;
+}
+
+#asideList {
+  color: #343a40;
+  list-style-type: none;
+  line-height: 1.5;
+  padding-left: 2rem;
+}
+
+#asideList li {
+  margin: 0;
+}
+
+.listItems a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #343a40;
+  line-height: 1.5;
+  transition: transform 0.3s ease;
+}
+
+#asideList a:hover {
+  transform: translateX(10px);
+  font-weight: bold;
+  text-decoration: wavy underline;
+  color: #bc6c25;
+}
+
+.listTitles {
+  font-size: 1.5rem;
+  padding-top: 1rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+footer {
+  background-color: #ecdfcc;
+  grid-area: footer;
+}
+
+.footerIcons {
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerImg {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.footerImg:hover {
+  transform: scale(1.2);
+}
+
+.footerIcons img {
+  margin: 0 20px;
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr repeat(8, 1fr) 0.2fr;
+    grid-template-areas:
+      "header"
+      "article"
+      "article"
+      "article"
+      "article"
+      "article"
+      "article"
+      "article"
+      "article"
+      "footer";
+    height: 100%;
+  }
+
+  header {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  article {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-areas:
+      "album1"
+      "album2"
+      "album3"
+      "album4"
+      "album5"
+      "album6"
+      "album7"
+      "album8";
+    height: 100%;
+    border-radius: 10px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  #album1,
+  #album2,
+  #album3,
+  #album4,
+  #album5,
+  #album6,
+  #album7,
+  #album8 {
+    width: 17rem;
+    height: 17rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .albumInfo h2 {
+    font-size: 1rem;
+  }
+
+  aside {
+    display: none;
+  }
+
+  #leaningMan {
+    display: none;
+  }
+
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #headerTitleRsp {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  #headerTitle {
+    display: none;
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+}
